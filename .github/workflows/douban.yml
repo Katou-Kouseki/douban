@@ -3,6 +3,8 @@ name: Douban Get Json
 on:
   schedule:
     - cron: '7 1,5,10,14,17,22 * * *'
+  watch:
+    types: [started]
   # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#providing-inputs
   workflow_dispatch:
     inputs:
@@ -27,7 +29,7 @@ jobs:
     - name: movie
       uses: lizheming/doumark-action@master
       with:
-        id: 185455848
+        id: 166535290
         type: movie
         format: json
         dir: ./data/douban
